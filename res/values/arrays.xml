@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="TONE">
+    <item>Pollux</item>
+    <item>Procyon</item>
+    <item>Shaula</item>
+    <item>Spica</item>
+    <item>Talitha</item>
+  </string-array>
+
+  <string-array name="TIME">
+    <item>AM</item>
+    <item>PM</item>
+  </string-array>
+</resources>

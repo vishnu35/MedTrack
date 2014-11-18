@@ -2,6 +2,7 @@ package com.cs442team4.medtrack;
 
 import com.cs442team4.medtrack.R;
 import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.DailogMedicineDetails;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -10,12 +11,17 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.TabHost.TabSpec;
@@ -72,17 +78,24 @@ public class TrackerActivity extends Activity {
 			if(cursor.getInt(cursor.getColumnIndex(MedList.TIME4CHECK))== 1)
 				timings = timings + cursor.getString(cursor.getColumnIndex(MedList.TIME4)) + "  ";
 			
-			String[] medcontent = {cursor.getString(cursor.getColumnIndex(MedList.NAME)),timings,String.valueOf(cursor.getInt(cursor.getColumnIndex(MedList.COUNT)))};
+			String[] medcontent = {cursor.getString(cursor.getColumnIndex(MedList.NAME)),timings,String.valueOf(cursor.getInt(cursor.getColumnIndex(MedList.COUNT))),String.valueOf(cursor.getInt(cursor.getColumnIndex(MedList.MED_ID)))};
 			listAdapter.add(medcontent);
 		}
             
         list.setAdapter(listAdapter);
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-               
-            }
-        });
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, final View view,
+					int position, long id) {
+				TextView medIdTv = (TextView)view.findViewById(R.id.MedListId);
+				long MedId = 0;
+				try{
+					MedId = Integer.parseInt(medIdTv.getText().toString());					
+				} catch (Exception ex) {
+				}
+				DailogMedicineDetails.app_launched(TrackerActivity.this, MedId);
+			}
+		});
         ML.close();
     }
 
@@ -92,20 +105,26 @@ public class TrackerActivity extends Activity {
         public CustomListAdapter(Context context, int textViewResourceId) {
             super(context, textViewResourceId);
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
                 convertView = getLayoutInflater().inflate(R.layout.medlist, null);
-            }
-            
+            }            
             ((TextView)convertView.findViewById(R.id.MedListName)).setText(getItem(position)[0]);
             ((TextView)convertView.findViewById(R.id.MedListTimings)).setText(getItem(position)[1]);
             ((TextView)convertView.findViewById(R.id.MedListCount)).setText("Remaining Medicine Count : "+getItem(position)[2]);
-
+            ((TextView)convertView.findViewById(R.id.MedListId)).setText(getItem(position)[3]);
+            
             return convertView;
         }
+        
+        private void OnItemCli() {
+			// TODO Auto-generated method stub
+
+		}
+        
+        
         
     }
 

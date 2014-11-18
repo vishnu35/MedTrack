@@ -14,32 +14,131 @@
         android:gravity="center"
         android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/passcode"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/passcodeimg"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter the passcode"
-            android:inputType="textPassword"
-            android:layout_marginBottom="10dp" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/submitbtn"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
-            android:text="Log In"
-            android:textColor="#2A2B2A"
-            android:textSize="20sp" 
             android:layout_marginBottom="20dp"
-            android:onClick="Login" />
+            android:src="@drawable/imgp" />
+
+        <LinearLayout
+            android:id="@+id/btnhorloginlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/verbtnloginlay01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="10dp" >
+
+                <Button
+                    android:id="@+id/pone"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/pfour"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/pseven"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/verbtnloginlay02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/ptwo"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/pfive"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/peight"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/pzero"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/verbtnloginlay03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <Button
+                    android:id="@+id/pthree"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/psix"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/pnine"
+                    android:layout_width="96px"
+                    android:layout_height="76px"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/submitbtn"
+                    android:onClick="passCodeBtnClick"
+                    android:text="9" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -56,6 +56,7 @@ public class MedList {
 	}
 	
 	private static final String SQL_GET_ALL_MED_LIST = "SELECT * FROM " + TABLE_NAME;
+	private static final String SQL_GET_MED_DETAILS = "SELECT * FROM " + TABLE_NAME + " WHERE "+MED_ID+"=?";
 	
 	public MedList(Context context) {
 		this.context = context;
@@ -96,5 +97,9 @@ public class MedList {
 		
 	public Cursor getMedList(){
 		return db.rawQuery(SQL_GET_ALL_MED_LIST, null);
+	}
+	
+	public Cursor getMedDetails(long id){
+		return db.rawQuery(SQL_GET_MED_DETAILS,	new String[] { String.valueOf(id) });
 	}
 }

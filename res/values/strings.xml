@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">MedRemind</string>
     <string name="no_schedule">MedRemind Free</string>
     <string name="app_name_notif">Medicine Reminder</string>
@@ -81,4 +82,9 @@
     <string name="Edit">Edit</string>
     <string name="Ok">OK</string>
     <string name="Snooze">Snooze</string>
+    <string name="title_activity_medicine">MedicineActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_prescription">PrescriptionActivity</string>
+
 </resources>

@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
 		if (RPassCode == null) {
 			Intent intent = new Intent(this, RegistrationActivity.class);
 			startActivity(intent);
+			this.finish();
 		}
 
 		PasscodeImg = (ImageView) findViewById(R.id.passcodeimg);

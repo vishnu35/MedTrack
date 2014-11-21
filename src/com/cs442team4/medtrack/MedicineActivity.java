@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+@SuppressLint("NewApi")
 public class MedicineActivity extends Activity {
 	MedList ML;
 	ListView list;
@@ -43,24 +44,11 @@ public class MedicineActivity extends Activity {
 		}
 
 		while (cursor.moveToNext()) {
-			String timings = "";
-			if (cursor.getInt(cursor.getColumnIndex(MedList.TIME1CHECK)) == 1)
-				timings = timings
-						+ cursor.getString(cursor.getColumnIndex(MedList.TIME1))
-						+ "  ";
-			if (cursor.getInt(cursor.getColumnIndex(MedList.TIME2CHECK)) == 1)
-				timings = timings
-						+ cursor.getString(cursor.getColumnIndex(MedList.TIME2))
-						+ "  ";
-			if (cursor.getInt(cursor.getColumnIndex(MedList.TIME3CHECK)) == 1)
-				timings = timings
-						+ cursor.getString(cursor.getColumnIndex(MedList.TIME3))
-						+ "  ";
-			if (cursor.getInt(cursor.getColumnIndex(MedList.TIME4CHECK)) == 1)
-				timings = timings
-						+ cursor.getString(cursor.getColumnIndex(MedList.TIME4))
-						+ "  ";
-
+			String timings = MedList.getTimings(cursor.getString(cursor.getColumnIndex(MedList.TIME1))
+					,cursor.getString(cursor.getColumnIndex(MedList.TIME2))
+					,cursor.getString(cursor.getColumnIndex(MedList.TIME3))
+					,cursor.getString(cursor.getColumnIndex(MedList.TIME4)));
+			
 			String[] medcontent = {
 					cursor.getString(cursor.getColumnIndex(MedList.NAME)),
 					timings,

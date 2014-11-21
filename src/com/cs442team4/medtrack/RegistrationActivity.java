@@ -34,5 +34,6 @@ public class RegistrationActivity extends Activity {
 		editor.commit();
 		Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
 		startActivity(intent);
+		finish();
     }
 }

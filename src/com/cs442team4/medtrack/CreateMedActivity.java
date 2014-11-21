@@ -25,7 +25,8 @@ public class CreateMedActivity extends Activity {
 	
 	MedList ML;
 	EditText CreateMName, CreateMDes, CreateMCount, CreateMStartDate, CreateMTime1, CreateMTime2, CreateMTime3, CreateMTime4;
-	CheckBox CreateMTimecheckBox1 ,CreateMTimecheckBox2, CreateMTimecheckBox3, CreateMTimecheckBox4, CreateMInterval;
+	CheckBox CreateMTime1Check, CreateMTime2Check, CreateMTime3Check, CreateMTime4Check;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,12 +40,10 @@ public class CreateMedActivity extends Activity {
 		CreateMTime2 = (EditText)findViewById(R.id.CreateMTime2);
 		CreateMTime3 = (EditText)findViewById(R.id.CreateMTime3);
 		CreateMTime4 = (EditText)findViewById(R.id.CreateMTime4);
-		
-		CreateMTimecheckBox1 = (CheckBox)findViewById(R.id.CreateMTimecheckBox1);
-		CreateMTimecheckBox2 = (CheckBox)findViewById(R.id.CreateMTimecheckBox2);
-		CreateMTimecheckBox3 = (CheckBox)findViewById(R.id.CreateMTimecheckBox3);
-		CreateMTimecheckBox4 = (CheckBox)findViewById(R.id.CreateMTimecheckBox4);
-		CreateMInterval = (CheckBox)findViewById(R.id.CreateMInterval);
+		CreateMTime1Check = (CheckBox)findViewById(R.id.CreateMTime1Check);
+		CreateMTime2Check = (CheckBox)findViewById(R.id.CreateMTime2Check);
+		CreateMTime3Check = (CheckBox)findViewById(R.id.CreateMTime3Check);
+		CreateMTime4Check = (CheckBox)findViewById(R.id.CreateMTime4Check);
 		
 	}
 	
@@ -59,16 +58,15 @@ public class CreateMedActivity extends Activity {
 		} catch(Exception ex){
 			M.COUNT = 0;
 		}
+		if(CreateMTime1Check.isChecked())
 		M.TIME1 = CreateMTime1.getText().toString();
+		if(CreateMTime2Check.isChecked())
 		M.TIME2 = CreateMTime2.getText().toString();
+		if(CreateMTime3Check.isChecked())
 		M.TIME3 = CreateMTime3.getText().toString();
+		if(CreateMTime4Check.isChecked())
 		M.TIME4 = CreateMTime4.getText().toString();
 		
-		M.TIME1CHECK = CreateMTimecheckBox1.isChecked() ? 1 : 0 ;
-		M.TIME2CHECK = CreateMTimecheckBox2.isChecked() ? 1 : 0 ;
-		M.TIME3CHECK = CreateMTimecheckBox3.isChecked() ? 1 : 0 ;
-		M.TIME4CHECK = CreateMTimecheckBox4.isChecked() ? 1 : 0 ;
-		M.REPEAT = CreateMInterval.isChecked() ? 1 : 0 ;
 		
 		ML = new MedList(this.getBaseContext());
 		ML.openWritable();
@@ -91,11 +89,22 @@ public void showDatePickerDialog(View v) {
 public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        return new DatePickerDialog(getActivity(), this, year, month, day);
+    	final Calendar c = Calendar.getInstance();
+    	int year = c.get(Calendar.YEAR);
+    	int month = c.get(Calendar.MONTH);
+    	int day = c.get(Calendar.DAY_OF_MONTH);
+    	
+        EditText et = (EditText)getActivity().findViewById(R.id.CreateMStartDate);
+        String time = et.getText().toString();
+        if(!time.isEmpty()){
+        	try {
+        	String[] sp = time.split("/");
+        	year = Integer.parseInt(sp[2]);
+            month = Integer.parseInt(sp[1])-1;
+            day = Integer.parseInt(sp[0]);
+        	}catch(Exception ex){}
+        }
+		return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
     @Override
@@ -122,7 +131,18 @@ public static class TimePickerFragment extends DialogFragment implements TimePic
 	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		return new TimePickerDialog(getActivity(),this,0,0,true);
+		int hour = 0;
+    	int min = 0;
+		EditText et = (EditText)getActivity().findViewById(ID);
+        String time = et.getText().toString();
+        if(!time.isEmpty()){
+        	try {
+        	String[] sp = time.split(":");
+        	hour = Integer.parseInt(sp[0]);
+        	min = Integer.parseInt(sp[1]);
+        	}catch(Exception ex){}
+        }
+		return new TimePickerDialog(getActivity(),this,hour,min,true);
 	}
 	
 	@Override

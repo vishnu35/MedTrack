@@ -4,14 +4,19 @@ import java.util.Calendar;
 
 import com.cs442team4.medtrack.R;
 import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.ReminderReceiver;
+import com.cs442team4.medtrack.helper.SetReminders;
 import com.cs442team4.medtrack.obj.Medicine;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -72,10 +77,13 @@ public class CreateMedActivity extends Activity {
 		ML.openWritable();
 		long id = ML.insertData(M);
 		ML.close();
+		M.MED_ID = (int)id;
 		
-		Intent intent = new Intent(this, TrackerActivity.class);
-		intent.putExtra("from", "1");
-		startActivity(intent);
+		SetReminders.Set(this, M);
+		
+		Intent intent2 = new Intent(this, TrackerActivity.class);
+		intent2.putExtra("from", "1");
+		startActivity(intent2);
 		this.finish();
     }
 	

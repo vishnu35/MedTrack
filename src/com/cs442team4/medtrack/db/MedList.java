@@ -156,30 +156,13 @@ public class MedList {
         return db.update(MedList.TABLE_NAME, UpdateValues, where, null) > 0;
 	}
 	
-	@SuppressLint("NewApi")
-	public String getTimings(Medicine md){
-		String timings = "";
-		if (!md.TIME1.isEmpty())
-			timings = timings
-					+ md.TIME1
-					+ "  ";
-		if (!md.TIME2.isEmpty())
-			timings = timings
-					+ md.TIME2
-					+ "  ";
-		if (!md.TIME3.isEmpty())
-			timings = timings
-					+ md.TIME3
-					+ "  ";
-		if (!md.TIME4.isEmpty())
-			timings = timings
-					+ md.TIME4
-					+ "  ";		
-		
-		return timings;
-		
+	public boolean MedTaken(int id, int count){
+		ContentValues UpdateValues = new ContentValues();
+		UpdateValues.put(MedList.COUNT, count);		
+		String where = MedList.MED_ID+"="+id;
+        return db.update(MedList.TABLE_NAME, UpdateValues, where, null) > 0;
 	}
-	
+		
 	@SuppressLint("NewApi")
 	public static String getTimings(String t1, String t2, String t3, String t4){
 		String timings = "";

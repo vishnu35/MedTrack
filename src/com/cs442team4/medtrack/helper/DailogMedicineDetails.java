@@ -8,8 +8,10 @@ import com.cs442team4.medtrack.obj.Medicine;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -60,6 +62,11 @@ public class DailogMedicineDetails{
             public void onClick(View v) {
                 //dialog.dismiss();
                 DeleteMed(id);
+                Intent intent = new Intent(context, ReminderReceiver.class);
+        		intent.putExtra("id", id);
+        		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int)id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        		AlarmManager am = (AlarmManager) context.getSystemService("alarm");
+        		am.cancel(pendingIntent);        		
             }
         });
 		
@@ -94,7 +101,7 @@ public class DailogMedicineDetails{
 						if(ML.deleteMed(id)){
 						Intent intent = new Intent(context, TrackerActivity.class);
 						context.startActivity(intent);
-						((Activity) context).finish();
+						//((Activity) context).finish();
 						}
 						ML.close();
 					}

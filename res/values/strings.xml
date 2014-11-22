@@ -87,5 +87,6 @@
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_prescription">PrescriptionActivity</string>
     <string name="title_activity_edit_medicine">EditMedicineActivity</string>
+    <string name="title_activity_reminder_view">ReminderViewActivity</string>
 
 </resources>

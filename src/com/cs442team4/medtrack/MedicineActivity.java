@@ -103,11 +103,6 @@ public class MedicineActivity extends Activity {
 			return convertView;
 		}
 
-		private void OnItemCli() {
-			// TODO Auto-generated method stub
-
-		}
-
 	}
 
 	public void AddMed(View v) {

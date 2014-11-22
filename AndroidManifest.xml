@@ -56,6 +56,13 @@
             android:name=".EditMedicineActivity"
             android:label="@string/title_activity_edit_medicine" >
         </activity>
+
+        <receiver android:name=".helper.ReminderReceiver" />
+
+        <activity
+            android:name=".ReminderViewActivity"
+            android:label="@string/title_activity_reminder_view" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class DbHelper extends SQLiteOpenHelper {
 	public static final String DATABASE_NAME = "medtrack";
-	public static final int DATABASE_VERSION = 1;
+	public static final int DATABASE_VERSION = 2;
 
 	public DbHelper(Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,14 +17,11 @@ public class DbHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
-		Log.v("qwer","asdf");
 		try {
 			db.execSQL(MedList.getSqlCreateMedlist());
-			Log.v("qwer","created");
+			db.execSQL(HisList.getSqlCreateHislist());
 		} catch (SQLException e) {
 			e.printStackTrace();
-			Log.v("qwer","error occured");
 		}
 	}
 
@@ -32,6 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 		db.execSQL("DROP TABLE IF EXISTS " + MedList.TABLE_NAME);
+		db.execSQL("DROP TABLE IF EXISTS " + HisList.TABLE_NAME);
 		onCreate(db);
 	}
 }

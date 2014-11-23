@@ -172,6 +172,10 @@ public static class TimePickerFragment extends DialogFragment implements TimePic
         	hour = Integer.parseInt(sp[0]);
         	min = Integer.parseInt(sp[1]);
         	}catch(Exception ex){}
+        }else{
+        	final Calendar c = Calendar.getInstance();
+        	hour = c.get(Calendar.HOUR_OF_DAY);
+        	min = c.get(Calendar.MINUTE);
         }
 		return new TimePickerDialog(getActivity(),this,hour,min,true);
 	}

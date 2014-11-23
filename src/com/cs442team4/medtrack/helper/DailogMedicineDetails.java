@@ -1,6 +1,7 @@
 package com.cs442team4.medtrack.helper;
 
 import com.cs442team4.medtrack.EditMedicineActivity;
+import com.cs442team4.medtrack.MedicineActivity;
 import com.cs442team4.medtrack.R;
 import com.cs442team4.medtrack.TrackerActivity;
 import com.cs442team4.medtrack.db.MedList;
@@ -27,8 +28,9 @@ import android.widget.TextView;
 @SuppressLint("InflateParams")
 public class DailogMedicineDetails{   
 	static MedList ML;
-	static Context context;
-    public static void app_launched(Context mContext, final long id) {
+	static MedicineActivity context;
+	static Medicine md;
+    public static void app_launched(MedicineActivity mContext, final long id) {
     	context = mContext;    	
     	final Dialog dialog = new Dialog(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -44,7 +46,7 @@ public class DailogMedicineDetails{
 		
 		ML = new MedList(mContext);
 		ML.openReadable();
-		Medicine md = ML.getMedDetailsObj(id);
+		md = ML.getMedDetailsObj(id);
 		ML.close();
 			MedName.setText(md.NAME);
 			MedDesc.setText("Description : "+md.DESCRIPTION);
@@ -62,11 +64,7 @@ public class DailogMedicineDetails{
             public void onClick(View v) {
                 //dialog.dismiss();
                 DeleteMed(id);
-                Intent intent = new Intent(context, ReminderReceiver.class);
-        		intent.putExtra("id", id);
-        		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int)id, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        		AlarmManager am = (AlarmManager) context.getSystemService("alarm");
-        		am.cancel(pendingIntent);        		
+                SetReminders.Remove(context, md);       		
             }
         });
 		

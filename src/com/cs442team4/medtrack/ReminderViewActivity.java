@@ -12,6 +12,7 @@ import com.cs442team4.medtrack.obj.Medicine;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +27,7 @@ public class ReminderViewActivity extends Activity {
 	static HisList HL;
 	static Medicine md;
 	static History hs;
+	static long extra;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -34,7 +36,9 @@ public class ReminderViewActivity extends Activity {
 		setContentView(R.layout.activity_reminder_view);
 
 		Bundle localBundle = getIntent().getExtras();
-		long id = localBundle.getLong("id", 0);
+		extra = localBundle.getLong("id",0);
+		long id = extra/10000;
+		long time = (int) (extra%10);
 
 		MedVName = (TextView) findViewById(R.id.MedVName);
 		MedVDesc = (TextView) findViewById(R.id.MedVDesc);
@@ -44,11 +48,11 @@ public class ReminderViewActivity extends Activity {
 		ML.openReadable();
 		md = ML.getMedDetailsObj(id);
 		ML.close();
-		String time = localBundle.getString("time", md.TIME1);
+		
 
 		MedVName.setText(md.NAME);
 		MedVDesc.setText(md.DESCRIPTION);
-		MedVTiming.setText(time);
+		MedVTiming.setText(getTimeString(time));
 
 	}
 
@@ -70,7 +74,21 @@ public class ReminderViewActivity extends Activity {
 		HL.openWritable();
 		long id = HL.insertData(hs);
 		HL.close();
+		
+	    NotificationManager nMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+	    nMgr.cancel((int)extra);
+		
 		finish();
+	}
+	
+	public static String getTimeString(long i){
+		switch ((int)i) {
+		case 1:	return md.TIME1;			
+		case 2:	return md.TIME2;			
+		case 3:	return md.TIME3;			
+		case 4: return md.TIME4;
+		default:return "";
+		}		
 	}
 	
 	public String getCurrentDate(){

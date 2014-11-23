@@ -6,17 +6,13 @@ import java.util.Date;
 
 import com.cs442team4.medtrack.db.HisList;
 import com.cs442team4.medtrack.db.MedList;
-import com.cs442team4.medtrack.helper.DailogMedicineDetails;
 import com.cs442team4.medtrack.obj.History;
 import com.cs442team4.medtrack.obj.Medicine;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.NotificationManager;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -72,6 +68,7 @@ public class ReminderViewActivity extends Activity {
 		}
 		HL = new HisList(this);
 		HL.openWritable();
+		@SuppressWarnings("unused")
 		long id = HL.insertData(hs);
 		HL.close();
 		

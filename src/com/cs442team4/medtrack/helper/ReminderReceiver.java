@@ -1,11 +1,5 @@
 package com.cs442team4.medtrack.helper;
 
-import com.cs442team4.medtrack.R;
-import com.cs442team4.medtrack.ReminderViewActivity;
-import com.cs442team4.medtrack.db.HisList;
-import com.cs442team4.medtrack.db.MedList;
-import com.cs442team4.medtrack.obj.Medicine;
-
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -14,7 +8,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+
+import com.cs442team4.medtrack.R;
+import com.cs442team4.medtrack.ReminderViewActivity;
+import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.obj.Medicine;
 
 @SuppressLint("InlinedApi")
 public class ReminderReceiver extends BroadcastReceiver {
@@ -34,6 +32,7 @@ public class ReminderReceiver extends BroadcastReceiver {
 		md = ML.getMedDetailsObj(id);
 		ML.close();
 
+		@SuppressWarnings("static-access")
 		NotificationManager localNotificationManager = (NotificationManager) context
 				.getSystemService(context.NOTIFICATION_SERVICE);
 		Notification localNotification = new Notification(

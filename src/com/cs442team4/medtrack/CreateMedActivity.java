@@ -2,21 +2,12 @@ package com.cs442team4.medtrack;
 
 import java.util.Calendar;
 
-import com.cs442team4.medtrack.R;
-import com.cs442team4.medtrack.db.MedList;
-import com.cs442team4.medtrack.helper.ReminderReceiver;
-import com.cs442team4.medtrack.helper.SetReminders;
-import com.cs442team4.medtrack.obj.Medicine;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlarmManager;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.DatePickerDialog;
-import android.app.PendingIntent;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +15,10 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+
+import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.SetReminders;
+import com.cs442team4.medtrack.obj.Medicine;
 
 @SuppressLint({ "NewApi", "DefaultLocale" })
 public class CreateMedActivity extends Activity {
@@ -133,8 +128,26 @@ public void showTimePickerDailog(View v){
 public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
 
 	int ID;
+	int CheckID;
 	public TimePickerFragment(int id){
 		ID = id;
+		switch (ID) {
+		case R.id.CreateMTime1:
+			CheckID = R.id.CreateMTime1Check;
+			break;
+		case R.id.CreateMTime2:
+			CheckID = R.id.CreateMTime2Check;
+			break;
+		case R.id.CreateMTime3:
+			CheckID = R.id.CreateMTime3Check;
+			break;
+		case R.id.CreateMTime4:
+			CheckID = R.id.CreateMTime4Check;
+			break;
+		default:
+			CheckID = R.id.CreateMTime1Check;
+			break;
+		}
 	}
 	
 	@Override
@@ -164,7 +177,18 @@ public static class TimePickerFragment extends DialogFragment implements TimePic
         String b = String.format("%02d",minute);       
         EditText dateValue = (EditText)getActivity().findViewById(ID);
         dateValue.setText(a + ":" + b);
+        CheckBox cb =(CheckBox)getActivity().findViewById(CheckID);
+        cb.setChecked(true);
 	}
 	
+	
+}
+
+@Override
+public void onBackPressed() {
+	Intent intent = new Intent(this, TrackerActivity.class);
+	startActivity(intent);
+	this.finish();
+	super.onBackPressed();
 }
 }

@@ -2,13 +2,6 @@ package com.cs442team4.medtrack;
 
 import java.util.Calendar;
 
-import javax.xml.datatype.Duration;
-
-import com.cs442team4.medtrack.CreateMedActivity.DatePickerFragment;
-import com.cs442team4.medtrack.CreateMedActivity.TimePickerFragment;
-import com.cs442team4.medtrack.db.MedList;
-import com.cs442team4.medtrack.obj.Medicine;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -17,14 +10,14 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
-import android.widget.Toast;
+
+import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.obj.Medicine;
 
 @SuppressLint({ "NewApi", "DefaultLocale" })
 public class EditMedicineActivity extends Activity {
@@ -156,8 +149,26 @@ public void showTimePickerDailog(View v){
 public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
 
 	int ID;
+	int CheckID;
 	public TimePickerFragment(int id){
 		ID = id;
+		switch (ID) {
+		case R.id.EditMTime1:
+			CheckID = R.id.EditMTime1Check;
+			break;
+		case R.id.EditMTime2:
+			CheckID = R.id.EditMTime2Check;
+			break;
+		case R.id.EditMTime3:
+			CheckID = R.id.EditMTime3Check;
+			break;
+		case R.id.EditMTime4:
+			CheckID = R.id.EditMTime4Check;
+			break;
+		default:
+			CheckID = R.id.EditMTime1Check;
+			break;
+		}
 	}
 	
 	@Override
@@ -186,7 +197,16 @@ public static class TimePickerFragment extends DialogFragment implements TimePic
         String b = String.format("%02d",minute);       
         EditText dateValue = (EditText)getActivity().findViewById(ID);
         dateValue.setText(a + ":" + b);
+        CheckBox cb =(CheckBox)getActivity().findViewById(CheckID);
+        cb.setChecked(true);
 	}
 	
+}
+@Override
+public void onBackPressed() {
+	Intent intent = new Intent(this, TrackerActivity.class);
+	startActivity(intent);
+	this.finish();
+	super.onBackPressed();
 }
 }

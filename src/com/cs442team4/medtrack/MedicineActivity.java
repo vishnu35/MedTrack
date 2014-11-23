@@ -1,22 +1,20 @@
 package com.cs442team4.medtrack;
 
-import com.cs442team4.medtrack.db.MedList;
-import com.cs442team4.medtrack.helper.DailogMedicineDetails;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.DailogMedicineDetails;
 
 @SuppressLint("NewApi")
 public class MedicineActivity extends Activity {
@@ -108,6 +106,7 @@ public class MedicineActivity extends Activity {
 	public void AddMed(View v) {
 		Intent intent = new Intent(this, CreateMedActivity.class);
 		startActivity(intent);
+		this.finish();
 	}
 
 	public void settings(View v) {

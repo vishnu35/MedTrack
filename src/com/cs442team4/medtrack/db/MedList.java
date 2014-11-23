@@ -1,14 +1,12 @@
 package com.cs442team4.medtrack.db;
 
-import com.cs442team4.medtrack.obj.Medicine;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+
+import com.cs442team4.medtrack.obj.Medicine;
 
 public class MedList {
 	public static String TABLE_NAME = "medlist";

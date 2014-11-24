@@ -45,9 +45,7 @@ public class DailogChangePassword {
 				String oldp = OldPass.getText().toString();
 				String newp = NewPass.getText().toString();
 				String newrp = NewRPass.getText().toString();
-				if ((oldp != null && newp != null && newrp != null
-						&& !oldp.isEmpty() && !newp.isEmpty() && !newrp
-						.isEmpty())) {
+				if (!oldp.isEmpty() && !newp.isEmpty() && !newrp.isEmpty()) {
 					SharedPreferences pref = context.getApplicationContext()
 							.getSharedPreferences("UserDetails",
 									Context.MODE_PRIVATE);
@@ -58,10 +56,11 @@ public class DailogChangePassword {
 						Toast.makeText(context, "New passcode Doesnot Match",
 								Toast.LENGTH_LONG).show();
 					} else {
-						Editor editor = pref.edit();		
+						Editor editor = pref.edit();
 						editor.putString("RPasscode", newp);
 						editor.commit();
-						Toast.makeText(context, "Passcode is been changed successfuly",
+						Toast.makeText(context,
+								"Passcode is been changed successfuly",
 								Toast.LENGTH_LONG).show();
 						dialog.dismiss();
 

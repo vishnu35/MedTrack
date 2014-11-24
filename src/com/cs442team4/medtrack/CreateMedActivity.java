@@ -8,15 +8,24 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.DailogMedicineDetails;
 import com.cs442team4.medtrack.helper.SetReminders;
 import com.cs442team4.medtrack.obj.Medicine;
 
@@ -26,7 +35,10 @@ public class CreateMedActivity extends Activity {
 	MedList ML;
 	EditText CreateMName, CreateMDes, CreateMCount, CreateMStartDate, CreateMTime1, CreateMTime2, CreateMTime3, CreateMTime4;
 	CheckBox CreateMTime1Check, CreateMTime2Check, CreateMTime3Check, CreateMTime4Check;
-	
+	Spinner mySpinner ;
+	String[] Istrings = { "pill1", "pill2", "pill3", "pill4", "pill5" };
+	int arr_images[] = { R.drawable.pill01, R.drawable.pill02, R.drawable.pill03, R.drawable.pill04, R.drawable.pill05 };
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,7 +57,37 @@ public class CreateMedActivity extends Activity {
 		CreateMTime3Check = (CheckBox)findViewById(R.id.CreateMTime3Check);
 		CreateMTime4Check = (CheckBox)findViewById(R.id.CreateMTime4Check);
 		
-	}
+		mySpinner = (Spinner)findViewById(R.id.CreateMSpinnerIcon);
+        mySpinner.setAdapter(new MyAdapter(CreateMedActivity.this, R.layout.iconspinner, Istrings));        
+    }
+ 
+    public class MyAdapter extends ArrayAdapter<String>{
+ 
+        public MyAdapter(Context context, int textViewResourceId,   String[] objects) {
+            super(context, textViewResourceId, objects);
+        }
+ 
+        @Override
+        public View getDropDownView(int position, View convertView,ViewGroup parent) {
+            return getCustomView(position, convertView, parent);
+        }
+ 
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return getCustomView(position, convertView, parent);
+        }
+ 
+        public View getCustomView(int position, View convertView, ViewGroup parent) {
+ 
+            LayoutInflater inflater=getLayoutInflater();
+            View row=inflater.inflate(R.layout.iconspinner, parent, false);
+ 
+            ImageView icon=(ImageView)row.findViewById(R.id.iconimage);
+            icon.setImageResource(arr_images[position]);
+ 
+            return row;
+            }
+        }
 	
 	public void CreateMed(View v){
 		
@@ -66,7 +108,7 @@ public class CreateMedActivity extends Activity {
 		M.TIME3 = CreateMTime3.getText().toString();
 		if(CreateMTime4Check.isChecked())
 		M.TIME4 = CreateMTime4.getText().toString();
-		
+		M.IMAGE = mySpinner.getSelectedItemPosition()+1;
 		
 		ML = new MedList(this.getBaseContext());
 		ML.openWritable();

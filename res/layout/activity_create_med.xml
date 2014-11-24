@@ -22,21 +22,37 @@
             style="@style/Divider"
             android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NAME"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:orientation="horizontal" >
 
-        <EditText
+            <Spinner
+                android:id="@+id/CreateMSpinnerIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="true"
+                android:prompt="@string/prompt" />
+<LinearLayout
+            android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAME"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <EditText
             android:id="@+id/CreateMName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" >
-
-            <requestFocus />
         </EditText>
+            </LinearLayout>
+        </LinearLayout>
 
+        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,16 +133,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-                
-                <EditText
-                    android:id="@+id/CreateMTime3"
+
+                    <EditText
+                        android:id="@+id/CreateMTime3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                    android:focusable="false"
-                    android:gravity="center"
-                    android:onClick="showTimePickerDailog" />
-                
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:onClick="showTimePickerDailog" />
+
                     <CheckBox
                         android:id="@+id/CreateMTime3Check"
                         android:layout_width="wrap_content"
@@ -168,16 +184,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-                
-                <EditText
-                    android:id="@+id/CreateMTime2"
+
+                    <EditText
+                        android:id="@+id/CreateMTime2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                    android:focusable="false"
-                    android:gravity="center"
-                    android:onClick="showTimePickerDailog" />
-                
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:onClick="showTimePickerDailog" />
+
                     <CheckBox
                         android:id="@+id/CreateMTime2Check"
                         android:layout_width="wrap_content"
@@ -195,16 +211,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-                
-                <EditText
-                    android:id="@+id/CreateMTime4"
+
+                    <EditText
+                        android:id="@+id/CreateMTime4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                    android:focusable="false"
-                    android:gravity="center"
-                    android:onClick="showTimePickerDailog" />
-                
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:onClick="showTimePickerDailog" />
+
                     <CheckBox
                         android:id="@+id/CreateMTime4Check"
                         android:layout_width="wrap_content"

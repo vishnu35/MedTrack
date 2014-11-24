@@ -10,4 +10,5 @@ public class Medicine {
 	public String TIME2;
 	public String TIME3;
 	public String TIME4;
+	public int IMAGE;
 }

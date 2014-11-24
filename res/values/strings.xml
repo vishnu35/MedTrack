@@ -9,4 +9,5 @@
     <string name="title_activity_registration">MedTrack Registration</string>
     <string name="title_activity_tracker">MedTrack</string>
     <string name="title_activity_create_med">MedTrack Create Medicine</string>
+    <string name="prompt">Select the icon</string>
 </resources>

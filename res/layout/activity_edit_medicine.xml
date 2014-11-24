@@ -22,20 +22,35 @@
             style="@style/Divider"
             android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NAME"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:orientation="horizontal" >
 
-        <EditText
+            <Spinner
+                android:id="@+id/EditMSpinnerIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="true"
+                android:prompt="@string/prompt" />
+<LinearLayout
+            android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAME"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <EditText
             android:id="@+id/EditMName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" >
-
-            <requestFocus />
         </EditText>
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

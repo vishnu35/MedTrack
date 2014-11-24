@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,18 +43,21 @@ public class MedicineActivity extends Activity {
 		}
 
 		while (cursor.moveToNext()) {
-			String timings = MedList.getTimings(cursor.getString(cursor.getColumnIndex(MedList.TIME1))
-					,cursor.getString(cursor.getColumnIndex(MedList.TIME2))
-					,cursor.getString(cursor.getColumnIndex(MedList.TIME3))
-					,cursor.getString(cursor.getColumnIndex(MedList.TIME4)));
-			
+			String timings = MedList.getTimings(
+					cursor.getString(cursor.getColumnIndex(MedList.TIME1)),
+					cursor.getString(cursor.getColumnIndex(MedList.TIME2)),
+					cursor.getString(cursor.getColumnIndex(MedList.TIME3)),
+					cursor.getString(cursor.getColumnIndex(MedList.TIME4)));
+
 			String[] medcontent = {
 					cursor.getString(cursor.getColumnIndex(MedList.NAME)),
 					timings,
 					String.valueOf(cursor.getInt(cursor
 							.getColumnIndex(MedList.COUNT))),
 					String.valueOf(cursor.getInt(cursor
-							.getColumnIndex(MedList.MED_ID))) };
+							.getColumnIndex(MedList.MED_ID))),
+					String.valueOf(cursor.getInt(cursor
+							.getColumnIndex(MedList.IMAGE))) };
 			listAdapter.add(medcontent);
 		}
 
@@ -68,7 +72,8 @@ public class MedicineActivity extends Activity {
 					MedId = Integer.parseInt(medIdTv.getText().toString());
 				} catch (Exception ex) {
 				}
-				DailogMedicineDetails.app_launched(MedicineActivity.this, MedId);
+				DailogMedicineDetails
+						.app_launched(MedicineActivity.this, MedId);
 			}
 		});
 		ML.close();
@@ -97,7 +102,11 @@ public class MedicineActivity extends Activity {
 							+ getItem(position)[2]);
 			((TextView) convertView.findViewById(R.id.MedListId))
 					.setText(getItem(position)[3]);
-
+			int Imgid = convertView.getResources().getIdentifier(
+					"pill0" + getItem(position)[4], "drawable",
+					getPackageName());
+			((ImageView) convertView.findViewById(R.id.MedListImage))
+					.setImageResource(Imgid);
 			return convertView;
 		}
 

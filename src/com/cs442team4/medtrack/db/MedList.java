@@ -19,6 +19,7 @@ public class MedList {
 	public static String TIME2 = "Time2";
 	public static String TIME3 = "Time3";
 	public static String TIME4 = "Time4";
+	public static String IMAGE = "Image";
 
 	public static String TEXT_TYPE = "TEXT";
 	public static String INT_TYPE = "INTEGER";
@@ -63,6 +64,10 @@ public class MedList {
 			+ TIME4
 			+ "' "
 			+ TEXT_TYPE
+			+ ", '"
+			+ IMAGE
+			+ "' "
+			+ INT_TYPE
 			+ " )";
 
 	public static String getSqlCreateMedlist() {
@@ -103,6 +108,7 @@ public class MedList {
 		conval.put(TIME2, M.TIME2);
 		conval.put(TIME3, M.TIME3);
 		conval.put(TIME4, M.TIME4);
+		conval.put(IMAGE, M.IMAGE);
 		return db.insertOrThrow(TABLE_NAME, null, conval);
 	}
 
@@ -129,7 +135,8 @@ public class MedList {
 			md.TIME1=cursor.getString(cursor.getColumnIndex(MedList.TIME1));
 			md.TIME2=cursor.getString(cursor.getColumnIndex(MedList.TIME2));
 			md.TIME3=cursor.getString(cursor.getColumnIndex(MedList.TIME3));
-			md.TIME4=cursor.getString(cursor.getColumnIndex(MedList.TIME4));				
+			md.TIME4=cursor.getString(cursor.getColumnIndex(MedList.TIME4));
+			md.IMAGE=cursor.getInt(cursor.getColumnIndex(MedList.IMAGE));
 		}
 		cursor.close();
 		return md;
@@ -149,7 +156,8 @@ public class MedList {
 		UpdateValues.put(MedList.TIME1, md.TIME1);
 		UpdateValues.put(MedList.TIME2, md.TIME2);
 		UpdateValues.put(MedList.TIME3, md.TIME3);
-		UpdateValues.put(MedList.TIME4, md.TIME4);		
+		UpdateValues.put(MedList.TIME4, md.TIME4);
+		UpdateValues.put(MedList.IMAGE, md.IMAGE);
 		String where = MedList.MED_ID+"="+md.MED_ID;
         return db.update(MedList.TABLE_NAME, UpdateValues, where, null) > 0;
 	}

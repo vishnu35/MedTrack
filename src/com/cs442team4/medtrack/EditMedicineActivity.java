@@ -8,14 +8,21 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import com.cs442team4.medtrack.CreateMedActivity.MyAdapter;
 import com.cs442team4.medtrack.db.MedList;
 import com.cs442team4.medtrack.obj.Medicine;
 
@@ -26,6 +33,10 @@ public class EditMedicineActivity extends Activity {
 	MedList ML;
 	EditText EditMName, EditMDes, EditMCount, EditMStartDate, EditMTime1, EditMTime2, EditMTime3, EditMTime4;
 	CheckBox EditMTime1Check, EditMTime2Check, EditMTime3Check, EditMTime4Check;	
+	Spinner mySpinner ;
+	String[] Istrings = { "pill1", "pill2", "pill3", "pill4", "pill5" };
+	int arr_images[] = { R.drawable.pill01, R.drawable.pill02, R.drawable.pill03, R.drawable.pill04, R.drawable.pill05 };
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,6 +56,8 @@ public class EditMedicineActivity extends Activity {
 		EditMTime2Check = (CheckBox)findViewById(R.id.EditMTime2Check);
 		EditMTime3Check = (CheckBox)findViewById(R.id.EditMTime3Check);
 		EditMTime4Check = (CheckBox)findViewById(R.id.EditMTime4Check);
+		mySpinner = (Spinner)findViewById(R.id.EditMSpinnerIcon);
+        mySpinner.setAdapter(new MyAdapter(EditMedicineActivity.this, R.layout.iconspinner, Istrings));
 		
 		Intent mIntent = getIntent();
 		id = mIntent.getLongExtra("id", 0);
@@ -68,7 +81,37 @@ public class EditMedicineActivity extends Activity {
 		EditMTime2Check.setChecked(md.TIME2 != null && !md.TIME2.isEmpty());	
 		EditMTime3Check.setChecked(md.TIME3 != null && !md.TIME3.isEmpty());	
 		EditMTime4Check.setChecked(md.TIME4 != null && !md.TIME4.isEmpty());
-	}
+		mySpinner.setSelection(md.IMAGE-1);
+		
+    }
+ 
+    public class MyAdapter extends ArrayAdapter<String>{
+ 
+        public MyAdapter(Context context, int textViewResourceId,   String[] objects) {
+            super(context, textViewResourceId, objects);
+        }
+ 
+        @Override
+        public View getDropDownView(int position, View convertView,ViewGroup parent) {
+            return getCustomView(position, convertView, parent);
+        }
+ 
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return getCustomView(position, convertView, parent);
+        }
+ 
+        public View getCustomView(int position, View convertView, ViewGroup parent) {
+ 
+            LayoutInflater inflater=getLayoutInflater();
+            View row=inflater.inflate(R.layout.iconspinner, parent, false);
+ 
+            ImageView icon=(ImageView)row.findViewById(R.id.iconimage);
+            icon.setImageResource(arr_images[position]);
+ 
+            return row;
+            }
+        }
 
 public void EditMed(View v){
 	Medicine M = new Medicine();
@@ -89,7 +132,8 @@ public void EditMed(View v){
 	M.TIME3 = EditMTime3.getText().toString();
 	if(EditMTime4Check.isChecked())
 	M.TIME4 = EditMTime4.getText().toString();
-	
+
+	M.IMAGE = mySpinner.getSelectedItemPosition()+1;
 	
 	ML = new MedList(this.getBaseContext());
 	ML.openWritable();

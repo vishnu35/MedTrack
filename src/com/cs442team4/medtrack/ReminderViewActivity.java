@@ -12,8 +12,12 @@ import com.cs442team4.medtrack.obj.Medicine;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 @SuppressLint("SimpleDateFormat")
@@ -23,18 +27,31 @@ public class ReminderViewActivity extends Activity {
 	static HisList HL;
 	static Medicine md;
 	static History hs;
-	static long extra;
+	static long extra, time;
+	PowerManager.WakeLock mWakeLock;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+		mWakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Wake Log");
+		mWakeLock.acquire();
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | 
+				WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | 
+				WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON , 
+				WindowManager.LayoutParams.FLAG_FULLSCREEN |
+				WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | 
+				WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+		
 		setContentView(R.layout.activity_reminder_view);
 
 		Bundle localBundle = getIntent().getExtras();
 		extra = localBundle.getLong("id",0);
 		long id = extra/10000;
-		long time = (int) (extra%10);
+		time = (int) (extra%10);
 
 		MedVName = (TextView) findViewById(R.id.MedVName);
 		MedVDesc = (TextView) findViewById(R.id.MedVDesc);
@@ -57,7 +74,7 @@ public class ReminderViewActivity extends Activity {
 		hs.MED_ID = md.MED_ID;
 		hs.MED_NAME = md.NAME;
 		hs.TAKEN_DATE_TIME = getCurrentTime()+ ", " + getCurrentDate();
-		hs.SCHEDULED_DATE_TIME = md.TIME1+ ", " + getCurrentDate();
+		hs.SCHEDULED_DATE_TIME = getTimeString(time)+ ", " + getCurrentDate();
 		hs.TAKEN = 0;
 		if (v.getId() == R.id.MedVBtnYes){
 			hs.TAKEN = 1;
@@ -97,5 +114,11 @@ public class ReminderViewActivity extends Activity {
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm");		
 		Date date = new Date();
 		return dateFormat.format(date).toString();
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		mWakeLock.release();
 	}
 }

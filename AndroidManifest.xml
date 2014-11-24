@@ -8,7 +8,10 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
 
     <application
         android:allowBackup="true"
@@ -26,19 +29,19 @@
         </activity>
         <activity
             android:name=".RegistrationActivity"
-            android:label="title_activity_registration" >
+            android:label="@string/title_activity_registration" >
         </activity>
         <activity
             android:name=".TrackerActivity"
-            android:label="title_activity_tracker" >
+            android:label="@string/title_activity_tracker" >
         </activity>
         <activity
             android:name=".CreateMedActivity"
-            android:label="title_activity_create_med" >
+            android:label="@string/title_activity_create_med" >
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="title_activity_settings" >
+            android:label="@string/title_activity_settings" >
         </activity>
         <activity
             android:name=".MedicineActivity"

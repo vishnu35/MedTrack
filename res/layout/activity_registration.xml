@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:maxLength="4"
             android:hint="passcode"
             android:inputType="textPassword|number"
             android:layout_marginBottom="10dp" >
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:maxLength="4"
             android:hint="Conform passcode"
             android:inputType="textPassword|number"
             android:layout_marginBottom="10dp" >

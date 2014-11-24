@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<PreferenceCategory android:title="Notification Settings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="checkboxSound"
+            android:summary="Turn on notification sound"
+            android:title="Notification Sound" />
+
+        <RingtonePreference
+            android:key="soundPref"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:summary="Select a tone"
+            android:title="Notification Alarm" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="checkboxVib"
+            android:summary="Turn on notification vibration"
+            android:title="Notification Vibration" />
+
+        <ListPreference
+            android:defaultValue="Short"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues"
+            android:key="PrefVib"
+            android:summary="Select a vibration pattern"
+            android:title="Vibration Pattern" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="checkboxLight"
+            android:summary="Turn on notification LED"
+            android:title="Notification LED" />
+
+        <ListPreference
+            android:defaultValue="Default"
+            android:entries="@array/listArray2"
+            android:entryValues="@array/listValues2"
+            android:key="PrefLight"
+            android:summary="Select LED Color"
+            android:title="LED Color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="window"
+            android:summary="Notifications with pop-up window"
+            android:title="Alert Window" />
+        <Preference android:title="Change Password"
+                android:key="changepassword"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

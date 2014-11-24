@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/time1"
+                    android:text="TIME 1"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <LinearLayout
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/time3"
+                    android:text="TIME3"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <LinearLayout
@@ -161,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/time2"
+                    android:text="TIME2"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <LinearLayout
@@ -188,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/time4"
+                    android:text="TIME4"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <LinearLayout

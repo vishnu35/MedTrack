@@ -54,7 +54,7 @@ public class HisList {
 	}
 
 	private static final String SQL_GET_ALL_HIS_LIST = "SELECT * FROM "
-			+ TABLE_NAME;
+			+ TABLE_NAME + " ORDER BY " + HIS_ID + " DESC";
 	private static final String SQL_GET_HIS_DETAILS = "SELECT * FROM "
 			+ TABLE_NAME + " WHERE " + MED_ID + "=?";
 

@@ -26,9 +26,10 @@ public class DailogMedicineDetails{
 	static MedList ML;
 	static MedicineActivity context;
 	static Medicine md;
+	static Dialog dialog;
     public static void app_launched(MedicineActivity mContext, final long id) {
     	context = mContext;    	
-    	final Dialog dialog = new Dialog(mContext);
+    	dialog = new Dialog(mContext);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View v = inflater.inflate(R.layout.meddetails, null);
 		TextView MedName = (TextView)v.findViewById(R.id.MedDName);
@@ -69,7 +70,7 @@ public class DailogMedicineDetails{
                 Intent intent = new Intent(context, EditMedicineActivity.class);
                 intent.putExtra("id", id);
 				context.startActivity(intent);
-				dialog.dismiss();				 
+                dialog.dismiss();
                 context.finish();
             }
         });			    
@@ -96,6 +97,7 @@ public class DailogMedicineDetails{
 						if(ML.deleteMed(id)){
 						Intent intent = new Intent(context, TrackerActivity.class);
 						context.startActivity(intent);
+						dialog.dismiss();
 						context.finish();
 						}
 						ML.close();

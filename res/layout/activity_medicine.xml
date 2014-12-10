@@ -41,23 +41,27 @@
 
             <Button
                 android:id="@+id/t1b1"
-                style="?android:attr/buttonStyleSmall"
+                android:textAppearance="@android:style/TextAppearance.Large"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/submitbtn"
+                android:background="@drawable/btn_dark_blue"
+                android:drawableLeft="@drawable/icon_plus"
+                android:textColor="#FFFFFF"
                 android:onClick="AddMed"
                 android:text="Add New" />
 
             <Button
                 android:id="@+id/t1b2"
-                style="?android:attr/buttonStyleSmall"
+                android:textAppearance="@android:style/TextAppearance.Large"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/submitbtn"
+                android:background="@drawable/btn_brown"
+                android:drawableLeft="@drawable/icon_settings"
+                android:textColor="#FFFFFF"
                 android:onClick="settings"
                 android:text="Settings" />
         </LinearLayout>

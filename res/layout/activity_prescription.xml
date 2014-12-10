@@ -9,31 +9,26 @@
         android:id="@+id/cemara"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/submitbtn"
         android:onClick="TakePic"
         android:text="Click Here To Take Image" />
 
     <LinearLayout
+        android:id="@+id/layout_imageview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn1" >
 
-        <ImageView
-            android:id="@+id/TimageView1"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_launcher"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/TimageView2"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:src="@drawable/prec" />
+        <Gallery
+            android:id="@+id/pgallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

@@ -9,10 +9,9 @@
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -66,6 +65,27 @@
         <activity
             android:name=".ReminderViewActivity"
             android:label="@string/title_activity_reminder_view" >
+        </activity>
+
+        <receiver
+            android:name=".helper.MyWidgetProvider"
+            android:icon="@drawable/ic_launcher"
+            android:label="MedTrack" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <service android:name=".helper.UpdateWidgetService" >
+        </service>
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password" >
         </activity>
     </application>
 

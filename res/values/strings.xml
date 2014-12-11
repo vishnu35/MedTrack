@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">MedTrack</string>
     <string name="title_activity_medicine">MedTrack</string>
     <string name="title_activity_history">MedTrack History</string>
@@ -10,4 +11,7 @@
     <string name="title_activity_tracker">MedTrack</string>
     <string name="title_activity_create_med">MedTrack Create Medicine</string>
     <string name="prompt">Select the icon</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

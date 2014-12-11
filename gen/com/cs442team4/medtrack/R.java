@@ -1113,11 +1113,11 @@ containing a value of this type.
         public static final int yes=0x7f020071;
     }
     public static final class id {
-        public static final int CPNewPasscode=0x7f06007b;
-        public static final int CPNewRPasscode=0x7f06007c;
-        public static final int CPOldPasscode=0x7f06007a;
-        public static final int CPbtnCancel=0x7f06007e;
-        public static final int CPbtnChange=0x7f06007f;
+        public static final int CPNewPasscode=0x7f06007e;
+        public static final int CPNewRPasscode=0x7f06007f;
+        public static final int CPOldPasscode=0x7f06007d;
+        public static final int CPbtnCancel=0x7f060081;
+        public static final int CPbtnChange=0x7f060082;
         public static final int CreateM=0x7f060049;
         public static final int CreateMCount=0x7f06003f;
         public static final int CreateMDes=0x7f06003e;
@@ -1146,35 +1146,37 @@ containing a value of this type.
         public static final int EditMTime3Check=0x7f060051;
         public static final int EditMTime4=0x7f060055;
         public static final int EditMTime4Check=0x7f060056;
-        public static final int HisLMedImage=0x7f060083;
-        public static final int HisLMedName=0x7f060080;
-        public static final int HisLMedScheduled=0x7f060081;
-        public static final int HisLMedTaken=0x7f060082;
-        public static final int HisListView=0x7f060058;
-        public static final int MedDBtnClose=0x7f06008b;
-        public static final int MedDBtnDelete=0x7f06008a;
-        public static final int MedDBtnEdit=0x7f06008c;
-        public static final int MedDCount=0x7f060087;
-        public static final int MedDDesc=0x7f060088;
-        public static final int MedDName=0x7f060085;
-        public static final int MedDSDate=0x7f060086;
-        public static final int MedDTimings=0x7f060089;
-        public static final int MedListCount=0x7f060091;
-        public static final int MedListId=0x7f06008e;
-        public static final int MedListImage=0x7f06008d;
-        public static final int MedListMsg=0x7f060069;
-        public static final int MedListName=0x7f06008f;
-        public static final int MedListTimings=0x7f060090;
-        public static final int MedListView=0x7f06006a;
-        public static final int MedVBtnNo=0x7f060078;
-        public static final int MedVBtnYes=0x7f060077;
-        public static final int MedVDesc=0x7f060075;
-        public static final int MedVName=0x7f060074;
-        public static final int MedVTiming=0x7f060076;
-        public static final int RPasscode=0x7f060071;
-        public static final int RPasscodeRe=0x7f060072;
-        public static final int RUserName=0x7f060070;
-        public static final int SubLayout1=0x7f060059;
+        public static final int FPUserName=0x7f060058;
+        public static final int FPgetPassbtn=0x7f060059;
+        public static final int HisLMedImage=0x7f060086;
+        public static final int HisLMedName=0x7f060083;
+        public static final int HisLMedScheduled=0x7f060084;
+        public static final int HisLMedTaken=0x7f060085;
+        public static final int HisListView=0x7f06005a;
+        public static final int MedDBtnClose=0x7f06008e;
+        public static final int MedDBtnDelete=0x7f06008d;
+        public static final int MedDBtnEdit=0x7f06008f;
+        public static final int MedDCount=0x7f06008a;
+        public static final int MedDDesc=0x7f06008b;
+        public static final int MedDName=0x7f060088;
+        public static final int MedDSDate=0x7f060089;
+        public static final int MedDTimings=0x7f06008c;
+        public static final int MedListCount=0x7f060094;
+        public static final int MedListId=0x7f060091;
+        public static final int MedListImage=0x7f060090;
+        public static final int MedListMsg=0x7f06006c;
+        public static final int MedListName=0x7f060092;
+        public static final int MedListTimings=0x7f060093;
+        public static final int MedListView=0x7f06006d;
+        public static final int MedVBtnNo=0x7f06007b;
+        public static final int MedVBtnYes=0x7f06007a;
+        public static final int MedVDesc=0x7f060078;
+        public static final int MedVName=0x7f060077;
+        public static final int MedVTiming=0x7f060079;
+        public static final int RPasscode=0x7f060074;
+        public static final int RPasscodeRe=0x7f060075;
+        public static final int RUserName=0x7f060073;
+        public static final int SubLayout1=0x7f06005b;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1189,9 +1191,9 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
-        public static final int btn=0x7f06007d;
-        public static final int btnhorloginlay=0x7f06005b;
-        public static final int cemara=0x7f06006d;
+        public static final int btn=0x7f060080;
+        public static final int btnhorloginlay=0x7f06005d;
+        public static final int cemara=0x7f060070;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
         public static final int default_activity_button=0x7f060028;
@@ -1205,32 +1207,33 @@ containing a value of this type.
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
-        public static final int iconimage=0x7f060084;
+        public static final int iconimage=0x7f060087;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int layout_imageview=0x7f06006e;
+        public static final int layout_imageview=0x7f060071;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int passcodeimg=0x7f06005a;
-        public static final int peight=0x7f060063;
-        public static final int pfive=0x7f060062;
-        public static final int pfour=0x7f06005e;
-        public static final int pgallery=0x7f06006f;
-        public static final int pnine=0x7f060068;
-        public static final int pone=0x7f06005d;
+        public static final int passcodeimg=0x7f06005c;
+        public static final int peight=0x7f060065;
+        public static final int pfive=0x7f060064;
+        public static final int pfour=0x7f060060;
+        public static final int pgallery=0x7f060072;
+        public static final int pgetPassbtn=0x7f06006b;
+        public static final int pnine=0x7f06006a;
+        public static final int pone=0x7f06005f;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
-        public static final int pseven=0x7f06005f;
-        public static final int psix=0x7f060067;
-        public static final int pthree=0x7f060066;
-        public static final int ptwo=0x7f060061;
-        public static final int pzero=0x7f060064;
+        public static final int pseven=0x7f060061;
+        public static final int psix=0x7f060069;
+        public static final int pthree=0x7f060068;
+        public static final int ptwo=0x7f060063;
+        public static final int pzero=0x7f060066;
         public static final int radio=0x7f06002f;
-        public static final int regbtn=0x7f060073;
+        public static final int regbtn=0x7f060076;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1247,17 +1250,21 @@ containing a value of this type.
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
-        public static final int t1b1=0x7f06006b;
-        public static final int t1b2=0x7f06006c;
+        public static final int t1b1=0x7f06006e;
+        public static final int t1b2=0x7f06006f;
         public static final int tabMode=0x7f060002;
-        public static final int textView1=0x7f060079;
+        public static final int textView1=0x7f06007c;
+        public static final int textView2=0x7f060096;
+        public static final int textView3=0x7f060097;
+        public static final int textView4=0x7f060098;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
+        public static final int update=0x7f060095;
         public static final int useLogo=0x7f060003;
-        public static final int verbtnloginlay01=0x7f06005c;
-        public static final int verbtnloginlay02=0x7f060060;
-        public static final int verbtnloginlay03=0x7f060065;
+        public static final int verbtnloginlay01=0x7f06005e;
+        public static final int verbtnloginlay02=0x7f060062;
+        public static final int verbtnloginlay03=0x7f060067;
         public static final int withText=0x7f06000c;
     }
     public static final class integer {
@@ -1312,19 +1319,21 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_create_med=0x7f030018;
         public static final int activity_edit_medicine=0x7f030019;
-        public static final int activity_history=0x7f03001a;
-        public static final int activity_main=0x7f03001b;
-        public static final int activity_medicine=0x7f03001c;
-        public static final int activity_prescription=0x7f03001d;
-        public static final int activity_registration=0x7f03001e;
-        public static final int activity_reminder_view=0x7f03001f;
-        public static final int activity_tracker=0x7f030020;
-        public static final int changepassword=0x7f030021;
-        public static final int hislist=0x7f030022;
-        public static final int iconspinner=0x7f030023;
-        public static final int meddetails=0x7f030024;
-        public static final int medlist=0x7f030025;
-        public static final int support_simple_spinner_dropdown_item=0x7f030026;
+        public static final int activity_forgot_password=0x7f03001a;
+        public static final int activity_history=0x7f03001b;
+        public static final int activity_main=0x7f03001c;
+        public static final int activity_medicine=0x7f03001d;
+        public static final int activity_prescription=0x7f03001e;
+        public static final int activity_registration=0x7f03001f;
+        public static final int activity_reminder_view=0x7f030020;
+        public static final int activity_tracker=0x7f030021;
+        public static final int changepassword=0x7f030022;
+        public static final int hislist=0x7f030023;
+        public static final int iconspinner=0x7f030024;
+        public static final int meddetails=0x7f030025;
+        public static final int medlist=0x7f030026;
+        public static final int support_simple_spinner_dropdown_item=0x7f030027;
+        public static final int widget_layout=0x7f030028;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1368,36 +1377,38 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
         public static final int app_name=0x7f0b000d;
-        public static final int pref_default_display_name=0x7f0b001c;
-        public static final int pref_description_social_recommendations=0x7f0b001a;
+        public static final int hello_world=0x7f0b0018;
+        public static final int pref_default_display_name=0x7f0b001e;
+        public static final int pref_description_social_recommendations=0x7f0b001c;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f0b001e;
+        public static final int pref_header_data_sync=0x7f0b0020;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f0b0018;
+        public static final int pref_header_general=0x7f0b001a;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f0b0021;
-        public static final int pref_ringtone_silent=0x7f0b0024;
-        public static final int pref_title_add_friends_to_messages=0x7f0b001d;
-        public static final int pref_title_display_name=0x7f0b001b;
-        public static final int pref_title_new_message_notifications=0x7f0b0022;
-        public static final int pref_title_ringtone=0x7f0b0023;
-        public static final int pref_title_social_recommendations=0x7f0b0019;
-        public static final int pref_title_sync_frequency=0x7f0b001f;
-        public static final int pref_title_system_sync_settings=0x7f0b0020;
-        public static final int pref_title_vibrate=0x7f0b0025;
+        public static final int pref_header_notifications=0x7f0b0023;
+        public static final int pref_ringtone_silent=0x7f0b0026;
+        public static final int pref_title_add_friends_to_messages=0x7f0b001f;
+        public static final int pref_title_display_name=0x7f0b001d;
+        public static final int pref_title_new_message_notifications=0x7f0b0024;
+        public static final int pref_title_ringtone=0x7f0b0025;
+        public static final int pref_title_social_recommendations=0x7f0b001b;
+        public static final int pref_title_sync_frequency=0x7f0b0021;
+        public static final int pref_title_system_sync_settings=0x7f0b0022;
+        public static final int pref_title_vibrate=0x7f0b0027;
         public static final int prompt=0x7f0b0016;
         public static final int title_activity_create_med=0x7f0b0015;
         public static final int title_activity_edit_medicine=0x7f0b0011;
+        public static final int title_activity_forgot_password=0x7f0b0017;
         public static final int title_activity_history=0x7f0b000f;
         public static final int title_activity_medicine=0x7f0b000e;
         public static final int title_activity_prescription=0x7f0b0010;
         public static final int title_activity_registration=0x7f0b0013;
         public static final int title_activity_reminder_view=0x7f0b0012;
-        public static final int title_activity_settings=0x7f0b0017;
+        public static final int title_activity_settings=0x7f0b0019;
         public static final int title_activity_tracker=0x7f0b0014;
     }
     public static final class style {
@@ -1633,6 +1644,7 @@ containing a value of this type.
     }
     public static final class xml {
         public static final int preferences=0x7f050000;
+        public static final int widget_info=0x7f050001;
     }
     public static final class styleable {
         /**  ============================================ 

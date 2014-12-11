@@ -63,5 +63,10 @@ public class MainActivity extends Activity {
 			PasscodeImg.setImageResource(R.drawable.imgp);
 		}
 	}
+	
+	public void forgotPasswordBtnClick(View v){
+		Intent intent = new Intent(this, ForgotPasswordActivity.class);
+		startActivity(intent);
+	}
 
 }

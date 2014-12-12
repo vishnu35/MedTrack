@@ -8,9 +8,9 @@ import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 
-import com.cs442team4.medtrack.CreateMedActivity;
 import com.cs442team4.medtrack.MedicineActivity;
 import com.cs442team4.medtrack.db.MedList;
 import com.cs442team4.medtrack.obj.Medicine;
@@ -19,9 +19,9 @@ import com.cs442team4.medtrack.obj.Medicine;
 public class SetReminders {
 	static MedList ML;
 	static Medicine medicine;
-	static CreateMedActivity context;
+	static Context context;
 	static long oneDayinMilli = 86400000;
-	public static void Set(CreateMedActivity mContext, Medicine m) {
+	public static void Set(Context mContext, Medicine m) {
 		context = mContext;
 		medicine = m;
 		for(int i=1;i<=4;i++){

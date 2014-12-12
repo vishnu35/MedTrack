@@ -5,8 +5,8 @@
     android:layout_gravity="center_vertical|center_horizontal|center"
     android:background="#00000000"
     android:gravity="center"
-    android:theme="@android:style/Theme.NoTitleBar"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.NoTitleBar" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,9 +16,9 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/popupbox"
-        android:orientation="vertical"        
-    	android:theme="@android:style/Theme.NoTitleBar"
-        android:padding="10dp" >
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:theme="@android:style/Theme.NoTitleBar" >
 
         <TextView
             android:id="@+id/MedDName"
@@ -34,8 +34,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" 
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/MedDSDate"
@@ -63,8 +63,8 @@
             android:id="@+id/MedDTimings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" 
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:text="TextView" />
 
         <View style="@style/Divider" />
 
@@ -80,8 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/submitbtn"
-                android:text="Delete" />
+                android:background="@drawable/btn_red"
+                android:drawableLeft="@drawable/icon_delete"
+                android:text="Delete"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MedDBtnClose"
@@ -90,8 +93,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/submitbtn"
-                android:text="Close" />
+                android:background="@drawable/btn_dark_blue"
+                android:drawableLeft="@drawable/icon_close"
+                android:text="Close"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MedDBtnEdit"
@@ -100,8 +106,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/submitbtn"
-                android:text="Edit" />
+                android:background="@drawable/btn_brown"
+                android:drawableLeft="@drawable/icon_edit"
+                android:text="Edit"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

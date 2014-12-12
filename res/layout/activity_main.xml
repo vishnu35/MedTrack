@@ -40,7 +40,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="1" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="1"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/pfour"
@@ -49,7 +52,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="4" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="4"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/pseven"
@@ -58,7 +64,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="7" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="7"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -74,7 +83,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="2" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="2"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/pfive"
@@ -83,7 +95,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="5" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="5"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/peight"
@@ -92,7 +107,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="8" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="8"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/pzero"
@@ -101,7 +119,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="0" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="0"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -118,7 +139,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="3" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="3"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/psix"
@@ -127,7 +151,10 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="6" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="6"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/pnine"
@@ -136,22 +163,26 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
-                    android:text="9" />
+                    android:shadowColor="#A8A8A8"
+                    android:shadowRadius="5"
+                    android:text="9"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
+
         <Button
             android:id="@+id/pgetPassbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/submitbtn"
+            android:drawableLeft="@drawable/icon_question_mark"
+            android:onClick="forgotPasswordBtnClick"
             android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
             android:shadowRadius="5"
             android:text="Forgot Password"
             android:textColor="#2A2B2A"
-            android:layout_marginTop="20dp"
-            android:onClick="forgotPasswordBtnClick"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

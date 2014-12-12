@@ -1,39 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/btn1" >
+    android:background="@drawable/box"
+    android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/update"
-        android:layout_width="wrap_content"
+        android:id="@+id/wgupcomingMedTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Large Text"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Upcoming Medicine List"
         android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/wgMedLay1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/box"
+        android:orientation="horizontal"
+        android:visibility="gone" >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/wgMedListName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aspirin" />
+
+        <TextView
+            android:id="@+id/wgMedListCount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(12)" />
+
+        <TextView
+            android:id="@+id/wgMedListTimings1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="08:30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wgMedLay2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="TextView" />
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/box"
+        android:orientation="horizontal"
+        android:visibility="gone" >
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/wgMedListName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aspirin" />
+
+        <TextView
+            android:id="@+id/wgMedListCount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(12)" />
+
+        <TextView
+            android:id="@+id/wgMedListTimings2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="08:30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wgMedLay3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/box"
+        android:orientation="horizontal"
+        android:visibility="gone" >
 
+        <TextView
+            android:id="@+id/wgMedListName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aspirin" />
+
+        <TextView
+            android:id="@+id/wgMedListCount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(12)" />
+
+        <TextView
+            android:id="@+id/wgMedListTimings3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="08:30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wgMedLay4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/box"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/wgMedListName4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aspirin" />
+
+        <TextView
+            android:id="@+id/wgMedListCount4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(12)" />
+
+        <TextView
+            android:id="@+id/wgMedListTimings4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="08:30" />
+    </LinearLayout>
 </LinearLayout>

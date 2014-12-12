@@ -31,11 +31,11 @@ public class SaveImage {
             dir.mkdirs();
         }
          
-        File file = new File(dir, NameOfFile +CurrentDateAndTime+ ".jpg");
+        File file = new File(dir, NameOfFile +CurrentDateAndTime+ ".png");
          
         try {
             FileOutputStream fOut = new FileOutputStream(file);
-            ImageToSave.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+            ImageToSave.compress(Bitmap.CompressFormat.PNG, 100, fOut);
             fOut.flush();
             fOut.close();
             MakeSureFileWasCreatedThenMakeAvabile(file);

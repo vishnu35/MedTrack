@@ -7,14 +7,19 @@
 
     <Button
         android:id="@+id/cemara"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_light_blue"
+            android:drawableLeft="@drawable/icon_camera"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" 
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/submitbtn"
         android:onClick="TakePic"
-        android:text="Click Here To Take Image" />
+        android:text=" Click Here To Take Image" />
 
     <LinearLayout
         android:id="@+id/layout_imageview"

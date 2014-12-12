@@ -18,11 +18,13 @@ import android.os.PowerManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 @SuppressLint("SimpleDateFormat")
 public class ReminderViewActivity extends Activity {
-	TextView MedVName, MedVDesc, MedVTiming;
+	TextView MedVName, MedVDesc, MedVTiming, MedVCount;
 	static MedList ML;
 	static HisList HL;
 	static Medicine md;
@@ -56,17 +58,27 @@ public class ReminderViewActivity extends Activity {
 		MedVName = (TextView) findViewById(R.id.MedVName);
 		MedVDesc = (TextView) findViewById(R.id.MedVDesc);
 		MedVTiming = (TextView) findViewById(R.id.MedVTiming);
+		MedVCount = (TextView) findViewById(R.id.MedVCountRem);
 
 		ML = new MedList(this);
 		ML.openReadable();
 		md = ML.getMedDetailsObj(id);
 		ML.close();
 		
-
+		int medcount = md.COUNT;
+		if(medcount<=2){
+			LinearLayout ly = (LinearLayout)findViewById(R.id.MedVCountRemLay);
+			ly.setVisibility(View.VISIBLE);
+			MedVCount.setText("You have only 2 medicines left!!");
+		}
+		
 		MedVName.setText(md.NAME);
 		MedVDesc.setText(md.DESCRIPTION);
 		MedVTiming.setText(getTimeString(time));
 
+		int Imgid = getResources().getIdentifier("pill0" + md.IMAGE, "drawable", getPackageName());
+		((ImageView) findViewById(R.id.MedVImg)).setImageResource(Imgid);
+		
 	}
 
 	public void BtnYesNoClick(View v) {

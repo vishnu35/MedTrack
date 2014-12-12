@@ -4,22 +4,30 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cs442team4.medtrack.db.MedList;
+import com.cs442team4.medtrack.helper.DailogMedicineDetails;
 import com.cs442team4.medtrack.helper.SaveImage;
 
 import android.R.array;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 
 @SuppressWarnings("deprecation")
@@ -30,6 +38,7 @@ public class PrescriptionActivity extends Activity {
 	ArrayList<Uri> arraylist;
 	String DirectoryPath;
 	Gallery gallery;
+	File[] file;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +51,63 @@ public class PrescriptionActivity extends Activity {
 
 		File[] pictures = GetFiles(DirectoryPath);
 		arraylist = getFileNames(pictures, DirectoryPath);
+		if(file.length!=0)
 		gallery.setAdapter(new ImageAdapter(this));
+		
+		gallery.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+				final int pos = position;
+				final Context context = PrescriptionActivity.this;
+				AlertDialog.Builder builder = new AlertDialog.Builder(context);
+				builder.setMessage("Are you sure u want to delete?");
+				
+				builder.setCancelable(false);
+				builder.setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface arg0,int arg1) {
+								File imgfile = file[file.length-pos-1];
+								if(imgfile.delete()){
+									Intent intent = new Intent(context, PrescriptionActivity.class);
+									context.startActivity(intent);
+									PrescriptionActivity.this.finish();
+								}
+							}
+						});
+				builder.setNegativeButton("No",
+				        new DialogInterface.OnClickListener() {
+				            public void onClick(DialogInterface dialog, int whichButton) {
+				            }
+				        });
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+				
+				// TODO Auto-generated method stub
+				
+				return false;
+			}
+			
+			});
+		
+		gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, final View view,
+					int position, long id) {
+				final int pos = position;
+				File imgfile = file[file.length-pos-1];
+            	Intent intent = new Intent(PrescriptionActivity.this, ImageFullScreenActivity.class);
+        		intent.putExtra("IMAGE", imgfile.getName());
+        		startActivity(intent);
+			}
+		});
 	}
 
 	public File[] GetFiles(String directoryPath) {
 		File f = new File(directoryPath);
 		f.mkdirs();
-		File[] file = f.listFiles();
+		file = f.listFiles();
 		Arrays.sort(file);
 		return file;
 	}
@@ -84,6 +143,7 @@ public class PrescriptionActivity extends Activity {
 
 				File[] pictures = GetFiles(DirectoryPath);
 				arraylist = getFileNames(pictures, DirectoryPath);
+				if(file.length!=0)
 				gallery.setAdapter(new ImageAdapter(this));
 			}
 		}

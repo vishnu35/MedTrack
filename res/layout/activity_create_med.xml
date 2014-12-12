@@ -11,17 +11,6 @@
         android:orientation="vertical"
         android:padding="10dp" >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="Create New Schedule" />
-
-        <View
-            style="@style/Divider"
-            android:layout_marginBottom="10dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -236,12 +225,16 @@
         <Button
             android:id="@+id/CreateM"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/submitbtn"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_light_blue"
+            android:drawableLeft="@drawable/icon_plus"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
             android:onClick="CreateMed"
-            android:text="Add To The List"
-            android:textSize="15sp" />
+            android:text=" Add To The List"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </ScrollView>

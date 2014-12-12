@@ -66,6 +66,10 @@
             android:name=".ReminderViewActivity"
             android:label="@string/title_activity_reminder_view" >
         </activity>
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password" >
+        </activity>
 
         <receiver
             android:name=".helper.MyWidgetProvider"
@@ -80,12 +84,9 @@
                 android:resource="@xml/widget_info" />
         </receiver>
 
-        <service android:name=".helper.UpdateWidgetService" >
-        </service>
-
         <activity
-            android:name=".ForgotPasswordActivity"
-            android:label="@string/title_activity_forgot_password" >
+            android:name=".ImageFullScreenActivity"
+            android:label="@string/title_activity_image_full_screen" >
         </activity>
     </application>
 

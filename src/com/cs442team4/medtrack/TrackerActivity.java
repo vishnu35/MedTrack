@@ -19,21 +19,21 @@ public class TrackerActivity extends TabActivity {
 		
 		TabSpec ts = th.newTabSpec("SCHEDULES");
 		ts.setContent(intent);
-		ts.setIndicator("SCHEDULES");
+		ts.setIndicator("", getResources().getDrawable(R.drawable.schedule));
 		th.addTab(ts);
 
 		intent = new Intent(this , HistoryActivity.class);
 		
 		ts = th.newTabSpec("HISTORY");
 		ts.setContent(intent);
-		ts.setIndicator("HISTORY");
+		ts.setIndicator("", getResources().getDrawable(R.drawable.history));
 		th.addTab(ts);	
 		
 		intent = new Intent(this , PrescriptionActivity.class);
 		
 		ts = th.newTabSpec("PRESCRIPTION");
 		ts.setContent(intent);
-		ts.setIndicator("PRESCRIPTION");
+		ts.setIndicator("", getResources().getDrawable(R.drawable.prescription));
 		th.addTab(ts);
 	}
 }

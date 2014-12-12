@@ -13,5 +13,6 @@
     <string name="prompt">Select the icon</string>
     <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_image_full_screen">ImageFullScreenActivity</string>
 
 </resources>

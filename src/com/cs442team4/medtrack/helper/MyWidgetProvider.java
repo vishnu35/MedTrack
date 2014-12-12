@@ -41,7 +41,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 				int timeId = context.getResources().getIdentifier("wgMedListTimings"+i, "id",context.getPackageName());
 				remoteViews.setViewVisibility(layId, View.VISIBLE);
 				remoteViews.setTextViewText(nameId, cursor.getString(cursor.getColumnIndex(MedList.NAME)));
-				remoteViews.setTextViewText(countId, String.valueOf(cursor.getInt(cursor.getColumnIndex(MedList.COUNT))));
+				remoteViews.setTextViewText(countId, "("+String.valueOf(cursor.getInt(cursor.getColumnIndex(MedList.COUNT)))+")");
 				remoteViews.setTextViewText(timeId, cursor.getString(cursor.getColumnIndex(MedList.TIME1)));
 				i++;
 			}

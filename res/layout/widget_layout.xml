@@ -10,11 +10,11 @@
         android:id="@+id/wgupcomingMedTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
         android:text="Upcoming Medicine List"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:id="@+id/wgMedLay1"

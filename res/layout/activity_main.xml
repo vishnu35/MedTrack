@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/SubLayout1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|center_horizontal|center"
         android:gravity="center"
@@ -35,8 +35,8 @@
 
                 <Button
                     android:id="@+id/pone"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -47,8 +47,8 @@
 
                 <Button
                     android:id="@+id/pfour"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -59,8 +59,8 @@
 
                 <Button
                     android:id="@+id/pseven"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -78,8 +78,8 @@
 
                 <Button
                     android:id="@+id/ptwo"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -90,8 +90,8 @@
 
                 <Button
                     android:id="@+id/pfive"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -102,8 +102,8 @@
 
                 <Button
                     android:id="@+id/peight"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -114,8 +114,8 @@
 
                 <Button
                     android:id="@+id/pzero"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -134,8 +134,8 @@
 
                 <Button
                     android:id="@+id/pthree"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -146,8 +146,8 @@
 
                 <Button
                     android:id="@+id/psix"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -158,8 +158,8 @@
 
                 <Button
                     android:id="@+id/pnine"
-                    android:layout_width="96px"
-                    android:layout_height="76px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/submitbtn"
                     android:onClick="passCodeBtnClick"
@@ -172,7 +172,7 @@
 
         <Button
             android:id="@+id/pgetPassbtn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/submitbtn"
@@ -180,7 +180,7 @@
             android:onClick="forgotPasswordBtnClick"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
-            android:text="Forgot Password"
+            android:text=" Forgot Password"
             android:textColor="#2A2B2A"
             android:textStyle="bold" />
     </LinearLayout>
